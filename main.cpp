@@ -96,11 +96,18 @@ int main() {
         cout << "Do you wish to enter a game into your log? (Y/N): ";
         cin >> choice;
         if (choice == 'Y' || choice == 'y') {
-            // make addGame function
+            addGame(game, gameCount);
         }
         else {
             break;
         }
     }
+
+    cout << "Do you wish to print your game log? (Y/N): ";
+    cin >> choice;
+    if (choice == 'Y' || choice == 'y') {
+       printLogs();
+    }
+
     return 0;
 }
