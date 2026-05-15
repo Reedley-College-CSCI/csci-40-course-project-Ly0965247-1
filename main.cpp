@@ -12,7 +12,7 @@
 
 using namespace std;
 
-const int MAX_SIZE = 50;
+const int MAX_SIZE = 3;
 
 struct GameLog {
     string title;
@@ -87,7 +87,7 @@ void searchGame(GameLog games[], int count) {
     string searchGame;
     bool gameFound = false;
     cout << "Enter game title" << endl;
-    cin.ignore();
+    cin.ignore(1000, '\n');
     getline(cin, searchGame);
     for (int i = 0; i < count; i++) {
         if (games[i].title == searchGame) {
@@ -110,12 +110,12 @@ void searchGame(GameLog games[], int count) {
 int main() {
     GameLog game[MAX_SIZE];
     int gameCount = 0;
-    char choice;
+    char choice = 'q';
     int menuNum;
 
     cout << "Welcome to your video game log!" << endl;
     // Adding a main menu so that the user can choose to either add a game, print a game log, or seach for a game.
-    cout << "Main Menu" << endl << endl;
+   /* cout << "Main Menu" << endl << endl;
     cout << "Add game to log (1)" << endl;
     cout << "Search for a game (2)" << endl;
     cout << "Print game logs (3)" << endl;
@@ -123,6 +123,7 @@ int main() {
     do {
         cin >> menuNum;
     } while (menuNum < 1); {
+    
         switch (menuNum) {
         case 1:
             addGame(game, gameCount);
@@ -136,8 +137,8 @@ int main() {
         }
     }
     // input game data from user
-
-    /*
+    */
+    
     while (gameCount < MAX_SIZE) {
         cout << "Do you wish to enter a game into your log? (Y/N): ";
         cin >> choice;
@@ -154,6 +155,6 @@ int main() {
     if (choice == 'Y' || choice == 'y') {
        printLogs();
     }
-    */
+    
     return 0;
 }
