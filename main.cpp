@@ -12,7 +12,7 @@
 
 using namespace std;
 
-const int MAX_SIZE = 100;
+const int MAX_SIZE = 20;
 
 struct GameLog {
     string title;
@@ -121,13 +121,15 @@ int main() {
 
     cout << "Welcome to your video game log!" << endl;
     // Adding a main menu so that the user can choose to either add a game, print a game log, or seach for a game.
-    cout << "Main Menu" << endl << endl;
-    cout << "Add game to log (1)" << endl;
-    cout << "Search for a game (2)" << endl;
-    cout << "Print game logs (3)" << endl;
-    cout << "Quit (4)" << endl;
     
     do {
+
+        cout << "Main Menu" << endl << endl;
+        cout << "Add game to log (1)" << endl;
+        cout << "Search for a game (2)" << endl;
+        cout << "Print game logs (3)" << endl;
+        cout << "Quit (4)" << endl;
+
         cin >> menuNum;
     
         switch (menuNum) {
