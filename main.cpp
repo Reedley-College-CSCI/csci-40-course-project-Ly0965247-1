@@ -12,6 +12,8 @@
 
 using namespace std;
 
+const int MAX_SIZE = 50;
+
 struct GameLog {
     string title;
     int hoursPlayed;
@@ -21,5 +23,23 @@ struct GameLog {
 };
 
 int main() {
+    Gamelog game[MAX_SIZE];
+    int gameCount = 0;
+    char choice;
+
+    cout << "Welcome to your video game log!" << endl;
+
+    // input game data from user
+
+    while (gameCount < MAX_SIZE) {
+        cout << "Do you wish to enter a game into your log? (Y/N): ";
+        cin >> choice;
+        if (choice == 'Y' || choice == 'y') {
+            // make addGame function
+        }
+        else {
+            break;
+        }
+    }
     return 0;
 }
