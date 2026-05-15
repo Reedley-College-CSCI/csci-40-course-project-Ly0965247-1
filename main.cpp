@@ -25,8 +25,21 @@ void printLogs();
 void addGame(GameLog games[], int& count);
 void saveLog(GameLog games[], int count);
 
+void printLogs() {
+    // This functions will print the game logs
+    ifstream inFile("GameLog.txt");
+        if (!inFile) {
+            cout << "There was an error poening the file." << endl;
+        }
+    string line;
+    while (getline(inFile, line)) {
+
+        cout << line << endl;
+    }
+}
+
 int main() {
-    Gamelog game[MAX_SIZE];
+    GameLog game[MAX_SIZE];
     int gameCount = 0;
     char choice;
 
