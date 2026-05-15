@@ -24,6 +24,7 @@ struct GameLog {
 void printLogs();
 void addGame(GameLog games[], int& count);
 void saveLog(GameLog games[], int count);
+void searchGame(GameLog games[], int count);
 
 void printLogs() {
     // This functions will print the game logs
@@ -65,7 +66,7 @@ void addGame(GameLog games[], int& count) {
 }
 void saveLog(GameLog games[], int count) {
 
-    fstream outputFile("GameLogog.txt");
+    fstream outputFile("GameLog.txt");
 
     if (!outputFile.is_open()) {
         cout << "Error opening game logs." << endl;
@@ -80,6 +81,23 @@ void saveLog(GameLog games[], int count) {
 
     }
     outputFile.close();
+}
+
+void searchGame(GameLog games[], int count) {
+    string searchgame;
+    cout << "Enter game title" << endl;
+    cin.ignore();
+    getline(cin, searchgame);
+    for (int i = 0; i < count; i++) {
+        if (games[i].title == searchgame) {
+            cout << "Title: " << games[i].title << endl;
+            cout << "Year purchased: " << games[i].yearPurchased << endl;
+            cout << "Cost: $" << games[i].cost << endl;
+            cout << "Hours played: " << games[i].hoursPlayed << endl;
+            cout << "Rating: " << games[i].rating << endl;
+            cout << "--------------------------" << endl;
+        }
+    }
 }
 
 
@@ -104,7 +122,7 @@ int main() {
             addGame(game, gameCount);
             break;
         case 2:
-            // search for a game function 
+            searchGame(game, gameCount);
             break;
         case 3:
             printLogs();
