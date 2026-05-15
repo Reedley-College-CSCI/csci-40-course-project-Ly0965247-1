@@ -21,6 +21,9 @@ struct GameLog {
     double cost;
     double rating;
 };
+void printLogs();
+void addGame(GameLog games[], int& count);
+void saveLog(GameLog games[], int count);
 
 int main() {
     Gamelog game[MAX_SIZE];
