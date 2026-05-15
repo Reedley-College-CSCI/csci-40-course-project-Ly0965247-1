@@ -84,19 +84,25 @@ void saveLog(GameLog games[], int count) {
 }
 
 void searchGame(GameLog games[], int count) {
-    string searchgame;
+    string searchGame;
+    bool gameFound = false;
     cout << "Enter game title" << endl;
     cin.ignore();
-    getline(cin, searchgame);
+    getline(cin, searchGame);
     for (int i = 0; i < count; i++) {
-        if (games[i].title == searchgame) {
+        if (games[i].title == searchGame) {
             cout << "Title: " << games[i].title << endl;
             cout << "Year purchased: " << games[i].yearPurchased << endl;
             cout << "Cost: $" << games[i].cost << endl;
             cout << "Hours played: " << games[i].hoursPlayed << endl;
             cout << "Rating: " << games[i].rating << endl;
             cout << "--------------------------" << endl;
+
+            gameFound = true;
         }
+    }
+    if (!gameFound) {
+        cout << "game not found" << endl;
     }
 }
 
