@@ -63,6 +63,25 @@ void addGame(GameLog games[], int& count) {
     }
     saveLog(games, count);
 }
+void saveLog(GameLog games[], int count) {
+
+    fstream outputFile("GameLogog.txt");
+
+    if (!outputFile.is_open()) {
+        cout << "Error opening game logs." << endl;
+    }
+    for (int i = 0; i < count; i++) {
+        outputFile << "Title: " << games[i].title << endl;
+        outputFile << "Year purchased: " << games[i].yearPurchased << endl;
+        outputFile << "Cost: $" << games[i].cost << endl;
+        outputFile << "Hours played: " << games[i].hoursPlayed << endl;
+        outputFile << "Rating: " << games[i].rating << endl;
+        outputFile << "--------------------------" << endl;
+
+    }
+    outputFile.close();
+}
+
 
 int main() {
     GameLog game[MAX_SIZE];
