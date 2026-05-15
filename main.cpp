@@ -10,6 +10,16 @@
 #include <string>
 #include <fstream>
 
+using namespace std;
+
+struct GameLog {
+    string title;
+    int hoursPlayed;
+    int yearPurchased;
+    double cost;
+    double rating;
+};
+
 int main() {
     return 0;
 }
