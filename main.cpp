@@ -40,8 +40,14 @@ void printLogs() {
 }
 
 void addGame(GameLog games[], int& count) {
-    cout << "Enter game title: ";
+    if (count >= MAX_SIZE) {
+        cout << "Game log is full. Cannot add more games." << endl;
+        return;
+    }
+
     cin.ignore();
+
+    cout << "Enter game title: ";
     getline(cin, games[count].title);
 
     cout << "Enter year purchased: ";
@@ -55,13 +61,9 @@ void addGame(GameLog games[], int& count) {
 
     cout << "What do you rate this game out of ten?" << endl;
     cin >> games[count].rating;
-
-    if (count < MAX_SIZE) {
-        count++;
-    }
-    else {
-        cout << "Game catalog is full. Cannot add more games." << endl;
-    }
+    
+    count++;
+    
     saveLog(games, count);
 }
 void saveLog(GameLog games[], int count) {
@@ -84,10 +86,14 @@ void saveLog(GameLog games[], int count) {
 }
 
 void searchGame(GameLog games[], int count) {
+
     string searchGame;
+
     bool gameFound = false;
-    cout << "Enter game title" << endl;
-    cin.ignore(1000, '\n');
+
+    cout << "Enter game title: " << endl;
+    cin.ignore();
+
     getline(cin, searchGame);
     for (int i = 0; i < count; i++) {
         if (games[i].title == searchGame) {
@@ -115,14 +121,14 @@ int main() {
 
     cout << "Welcome to your video game log!" << endl;
     // Adding a main menu so that the user can choose to either add a game, print a game log, or seach for a game.
-   /* cout << "Main Menu" << endl << endl;
+    cout << "Main Menu" << endl << endl;
     cout << "Add game to log (1)" << endl;
     cout << "Search for a game (2)" << endl;
     cout << "Print game logs (3)" << endl;
     
     do {
         cin >> menuNum;
-    } while (menuNum < 1); {
+    } while (menuNum < 1); 
     
         switch (menuNum) {
         case 1:
@@ -135,26 +141,7 @@ int main() {
             printLogs();
             break;
         }
-    }
-    // input game data from user
-    */
     
-    while (gameCount < MAX_SIZE) {
-        cout << "Do you wish to enter a game into your log? (Y/N): ";
-        cin >> choice;
-        if (choice == 'Y' || choice == 'y') {
-            addGame(game, gameCount);
-        }
-        else {
-            break;
-        }
-    }
-
-    cout << "Do you wish to print your game log? (Y/N): ";
-    cin >> choice;
-    if (choice == 'Y' || choice == 'y') {
-       printLogs();
-    }
     
     return 0;
 }

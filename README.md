@@ -5,6 +5,13 @@
 - What problem does your project solve?  
 - Briefly describe the purpose and key features of your program.  
 
+1. The problem that my project plans to solve is keeping track of the video games you might own. It keeps track of
+the title of the game, the year the user purchansed the game, the cost of the game, and the rating that they give it.
+
+2. Some key features of the program are being able to add games, search for games, and printing the list of games the user has.
+The purpose of the program is the help users keep track of their games and how much time they have spent on them. It also
+helps help them keep track of how much they like the game.
+
 ---
 
 ## 2. Design Decisions
@@ -13,6 +20,7 @@
 - How did you implement searching and sorting? What algorithms did you use and why?  
 - How do you ensure data persistence between program runs?  
 - Did you consider alternative approaches? If so, why did you not use them?  
+
 
 ---
 
