@@ -29,13 +29,39 @@ void printLogs() {
     // This functions will print the game logs
     ifstream inFile("GameLog.txt");
         if (!inFile) {
-            cout << "There was an error poening the file." << endl;
+            cout << "There was an error opening the file." << endl;
         }
     string line;
     while (getline(inFile, line)) {
 
         cout << line << endl;
     }
+}
+
+void addGame(GameLog games[], int& count) {
+    cout << "Enter game title: ";
+    cin.ignore();
+    getline(cin, games[count].title);
+
+    cout << "Enter year made: ";
+    cin >> games[count].yearPurchased;
+
+    cout << "Enter the cost: $";
+    cin >> games[count].cost;
+
+    cout << "Enter hours played: ";
+    cin >> games[count].hoursPlayed;
+
+    cout << "What do you rate this game out of ten?" << endl;
+    cin >> games[count].rating;
+
+    if (count < MAX_SIZE) {
+        count++;
+    }
+    else {
+        cout << "Game catalog is full. Cannot add more games." << endl;
+    }
+    saveLog(games, count);
 }
 
 int main() {
