@@ -12,7 +12,7 @@
 
 using namespace std;
 
-const int MAX_SIZE = 3;
+const int MAX_SIZE = 100;
 
 struct GameLog {
     string title;
@@ -125,10 +125,10 @@ int main() {
     cout << "Add game to log (1)" << endl;
     cout << "Search for a game (2)" << endl;
     cout << "Print game logs (3)" << endl;
+    cout << "Quit (4)" << endl;
     
     do {
         cin >> menuNum;
-    } while (menuNum < 1); 
     
         switch (menuNum) {
         case 1:
@@ -140,8 +140,10 @@ int main() {
         case 3:
             printLogs();
             break;
+        case 4:
+            cout << "Goodbye!" << endl;
         }
-    
+    } while (menuNum != 4);
     
     return 0;
 }
