@@ -43,7 +43,7 @@ void addGame(GameLog games[], int& count) {
     cin.ignore();
     getline(cin, games[count].title);
 
-    cout << "Enter year made: ";
+    cout << "Enter year purchased: ";
     cin >> games[count].yearPurchased;
 
     cout << "Enter the cost: $";
@@ -95,8 +95,22 @@ int main() {
     cout << "Add game to log (1)" << endl;
     cout << "Search for a game (2)" << endl;
     cout << "Print game logs (3)" << endl;
-
-
+    
+    do {
+        cin >> menuNum;
+    } while (menuNum < 1); {
+        switch (menuNum) {
+        case 1:
+            addGame(game, gameCount);
+            break;
+        case 2:
+            // search for a game function 
+            break;
+        case 3:
+            printLogs();
+            break;
+        }
+    }
     // input game data from user
 
     /*
